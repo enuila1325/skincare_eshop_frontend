@@ -1,0 +1,9 @@
+.slick-slider .slick-arrow-custom {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slick-slider:hover .slick-arrow-custom {
+  opacity: 1;
+  pointer-events: auto;
+}
