@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navbar from "./components/layout/Navbar";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
+import Footer from "./components/Footer";
 import getTheme from "./theme/theme";
 
 
@@ -17,6 +18,7 @@ export default function App() {
       <Container>
         <Home />
         <Catalog />
+        <Footer />
       </Container>
     </ThemeProvider>
   );
