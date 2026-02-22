@@ -5,13 +5,16 @@ import {
   Typography,
   Link,
   IconButton,
+  useTheme,
 } from "@mui/material";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 export default function Footer() {
-  const phoneNumber = "50492357673"; // SIN +
+  const theme = useTheme();
+
+  const phoneNumber = "50499999999";
   const whatsappMessage = "Hola, quiero información sobre sus productos";
 
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
@@ -22,10 +25,10 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#f5f5f5",
+        backgroundColor: "background.paper",
         mt: 6,
         py: 5,
-        borderTop: "1px solid #e0e0e0",
+        borderTop: `1px solid ${theme.palette.divider}`,
       }}
     >
       <Container maxWidth="lg">
@@ -35,7 +38,7 @@ export default function Footer() {
             <Typography variant="h6" gutterBottom>
               Nuestra Tienda
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" color="text.secondary">
               Avenida Principal, Local #12
               <br />
               Tegucigalpa, Honduras
@@ -47,7 +50,8 @@ export default function Footer() {
             <Typography variant="h6" gutterBottom>
               Contacto
             </Typography>
-            <Typography variant="body2">
+
+            <Typography variant="body2" color="text.secondary">
               Tel: +504 9999-9999
             </Typography>
 
@@ -55,10 +59,14 @@ export default function Footer() {
               href={whatsappLink}
               target="_blank"
               rel="noopener"
-              underline="none"
-              sx={{ display: "flex", alignItems: "center", mt: 1 }}
+              underline="hover"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                mt: 1,
+              }}
             >
-              <WhatsAppIcon sx={{ mr: 1, color: "#25D366" }} />
+              <WhatsAppIcon sx={{ mr: 1 }} />
               Escríbenos por WhatsApp
             </Link>
           </Grid>
@@ -73,6 +81,7 @@ export default function Footer() {
               component="a"
               href="https://facebook.com"
               target="_blank"
+              color="inherit"
             >
               <FacebookIcon />
             </IconButton>
@@ -81,6 +90,7 @@ export default function Footer() {
               component="a"
               href="https://instagram.com"
               target="_blank"
+              color="inherit"
             >
               <InstagramIcon />
             </IconButton>
@@ -92,12 +102,12 @@ export default function Footer() {
           sx={{
             mt: 4,
             pt: 3,
-            borderTop: "1px solid #ddd",
+            borderTop: `1px solid ${theme.palette.divider}`,
             textAlign: "center",
           }}
         >
           <Typography variant="body2" color="text.secondary">
-            © {new Date().getFullYear()} Skincare. Todos los derechos reservados.
+            © {new Date().getFullYear()} Skincare Eshop. Todos los derechos reservados.
           </Typography>
         </Box>
       </Container>
