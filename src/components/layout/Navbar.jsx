@@ -32,6 +32,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
                             flexGrow: 1,
                             fontWeight: 600,
                             letterSpacing: 1,
+                            color: "#fff"
                         }}
                     >
                         SkinLove
