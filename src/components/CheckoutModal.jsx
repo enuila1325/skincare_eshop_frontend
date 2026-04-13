@@ -33,6 +33,8 @@ export default function CheckoutModal({ open, onClose }) {
         items: cart.map((i) => ({
           productId: i._id,
           quantity: i.quantity,
+          selectedImage: i.selectedImage,
+          variantIndex: i.variantIndex,
         })),
         paymentMethod,
         customerName,

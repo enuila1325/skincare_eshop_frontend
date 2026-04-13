@@ -1,22 +1,36 @@
-import { Card, CardMedia, CardContent, Typography, Button } from "@mui/material";
-import { useCart } from "../context/CartContext";
+export default function ProductCard({ product, onClick }) {
+  const firstImage = product.images?.[0] || product.image;
+  return (
+    <div
+      onClick={onClick}
+      style={{
+        cursor: "pointer",
+        background: "white",
+        borderRadius: "12px",
+        boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+        overflow: "hidden",
+        width: "100%",
+      }}
+    >
+      <div style={{ width: "100%", aspectRatio: "1/1", overflow: "hidden" }}>
+        <img
+          src={firstImage}
+          alt={product.name}
+          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        />
+      </div>
 
-
-export default function ProductCard({ product }) {
-    const { addToCart } = useCart();
-
-
-    return (
-        <Card>
-            <CardMedia component="img" height="200" image={product.image} />
-            <CardContent>
-                <Typography variant="h6">{product.name}</Typography>
-                <Typography variant="body2">{product.description}</Typography>
-                <Typography sx={{ mt: 1 }}>L. {product.price}</Typography>
-                <Button fullWidth variant="contained" sx={{ mt: 2 }} onClick={() => addToCart(product)}>
-                    Agregar al carrito
-                </Button>
-            </CardContent>
-        </Card>
-    );
+      <div style={{ padding: "12px" }}>
+        <h3 style={{ fontSize: "14px", fontWeight: "600", margin: "0 0 4px" }}>
+          {product.name}
+        </h3>
+        <p style={{ fontSize: "12px", color: "#6b7280", margin: "0 0 4px" }}>
+          {product.description}
+        </p>
+        <p style={{ color: "#ec4899", fontWeight: "700", margin: 0 }}>
+          L. {product.price}
+        </p>
+      </div>
+    </div>
+  );
 }
