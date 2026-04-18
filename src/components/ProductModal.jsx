@@ -35,7 +35,7 @@ export default function ProductModal({ product, open, onClose }) {
           padding: "20px",
           borderRadius: "12px",
           width: "90%",
-          maxWidth: "400px",
+          maxWidth: "30vw",
           position: "relative",
         }}
       >
@@ -48,11 +48,11 @@ export default function ProductModal({ product, open, onClose }) {
         </button>
 
         {/* Main image */}
-        <div style={{ height: "200px", overflow: "hidden", borderRadius: "8px" }}>
+        <div style={{ height: "40vh", overflow: "hidden", borderRadius: "8px" }}>
           <img
             src={images[selectedImage]}
             alt={product.name}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
           />
         </div>
 

@@ -24,9 +24,6 @@ export default function ProductCard({ product, onClick }) {
         <h3 style={{ fontSize: "14px", fontWeight: "600", margin: "0 0 4px" }}>
           {product.name}
         </h3>
-        <p style={{ fontSize: "12px", color: "#6b7280", margin: "0 0 4px" }}>
-          {product.description}
-        </p>
         <p style={{ color: "#ec4899", fontWeight: "700", margin: 0 }}>
           L. {product.price}
         </p>
