@@ -8,13 +8,13 @@ import {
   useTheme,
 } from "@mui/material";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import EmailIcon from '@mui/icons-material/Email';
 
 export default function Footer() {
   const theme = useTheme();
 
-  const phoneNumber = "50499999999";
+  const phoneNumber = "50489133141";
   const whatsappMessage = "Hola, quiero información sobre sus productos";
 
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
@@ -39,9 +39,11 @@ export default function Footer() {
               Nuestra Tienda
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Avenida Principal, Local #12
+              Online 
               <br />
-              Tegucigalpa, Honduras
+              Gracias, Lempira, HN
+              <br />
+              Tegucigalpa, Fco. Morazán, HN
             </Typography>
           </Grid>
 
@@ -52,7 +54,7 @@ export default function Footer() {
             </Typography>
 
             <Typography variant="body2" color="text.secondary">
-              Tel: +504 9999-9999
+              Cel: +504 8913-3141
             </Typography>
 
             <Link
@@ -67,28 +69,27 @@ export default function Footer() {
               }}
             >
               <WhatsAppIcon sx={{ mr: 1 }} />
-              Escríbenos por WhatsApp
+              Escríbenos
             </Link>
           </Grid>
 
           {/* Redes Sociales */}
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom>
-              Síguenos
+              Mas Información:
             </Typography>
 
             <IconButton
               component="a"
-              href="https://facebook.com"
-              target="_blank"
+              href="mailto:skinlovegraciasl@gmail.com"
               color="inherit"
             >
-              <FacebookIcon />
+              <EmailIcon />
             </IconButton>
 
             <IconButton
               component="a"
-              href="https://instagram.com"
+              href="https://www.instagram.com/skinlove_hn"
               target="_blank"
               color="inherit"
             >
@@ -107,7 +108,7 @@ export default function Footer() {
           }}
         >
           <Typography variant="body2" color="text.secondary">
-            © {new Date().getFullYear()} Skincare Eshop. Todos los derechos reservados.
+            © {new Date().getFullYear()} SkinLove Eshop. Todos los derechos reservados.
           </Typography>
         </Box>
       </Container>

@@ -21,48 +21,61 @@ export default function Navbar({ darkMode, setDarkMode }) {
                 position="sticky"
                 elevation={0}
                 sx={{
-                    backgroundColor: "#1f1f1f",   // gris negro fijo
+                    backgroundColor: "#ffffff",   // gris negro fijo
                     borderBottom: "1px solid #2a2a2a",
                 }}
             >
-                <Toolbar>
+                <Toolbar sx={{ display: "flex", alignItems: "center" }}>
+                    {/* Left - Logo text */}
                     <Typography
                         variant="h6"
                         sx={{
-                            flexGrow: 1,
+                            flex: 1,
                             fontWeight: 600,
                             letterSpacing: 1,
-                            color: "#fff"
+                            color: "#c48b9f"
                         }}
                     >
                         SkinLove
                     </Typography>
 
-                    {/* Dark Mode Toggle */}
-                    <IconButton
-                        sx={{ color: "#fff" }}
-                        onClick={() => setDarkMode(!darkMode)}
-                    >
-                        <DarkModeIcon />
-                    </IconButton>
+                    {/* Center - Image */}
+                    <img
+                        src="https://res.cloudinary.com/dlqwiqhsa/image/upload/v1776735571/LOGO_SKINLOVE_PNG_r0vwhp.png"
+                        alt="Banner Principal"
+                        style={{
+                            height: "10vh",
+                            borderRadius: "10px",
+                            objectFit: "cover"
+                        }}
+                    />
 
-                    {/* Cart */}
-                    <IconButton
-                        sx={{ color: "#fff" }}
-                        onClick={() => setOpen(true)}
-                    >
-                        <Badge
-                            badgeContent={cart.length}
-                            sx={{
-                                "& .MuiBadge-badge": {
-                                    backgroundColor: "#c48b9f", // rosado marca
-                                    color: "#fff",
-                                },
-                            }}
+                    {/* Right - Actions */}
+                    <div style={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
+                        <IconButton
+                            sx={{ color: "#000000" }}
+                            onClick={() => setDarkMode(!darkMode)}
                         >
-                            <ShoppingCartIcon />
-                        </Badge>
-                    </IconButton>
+                            <DarkModeIcon />
+                        </IconButton>
+
+                        <IconButton
+                            sx={{ color: "#000000" }}
+                            onClick={() => setOpen(true)}
+                        >
+                            <Badge
+                                badgeContent={cart.length}
+                                sx={{
+                                    "& .MuiBadge-badge": {
+                                        backgroundColor: "#c48b9f",
+                                        color: "#fff",
+                                    },
+                                }}
+                            >
+                                <ShoppingCartIcon />
+                            </Badge>
+                        </IconButton>
+                    </div>
                 </Toolbar>
             </AppBar>
 
